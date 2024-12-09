@@ -1,12 +1,105 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\saorcava\\source\\repos\\HahnSoftwareTest\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{ECF24A65-A735-46B8-849F-C37BDDCA65B3}|HahnSoftwareTest.Application\\HahnSoftwareTest.Application.csproj|c:\\users\\saorcava\\source\\repos\\hahnsoftwaretest\\hahnsoftwaretest.application\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ECF24A65-A735-46B8-849F-C37BDDCA65B3}|HahnSoftwareTest.Application\\HahnSoftwareTest.Application.csproj|solutionrelative:hahnsoftwaretest.application\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{69EA5CE6-460F-42AE-A735-969554911BD3}|HahnSoftwareTest.Infrastructure\\HahnSoftwareTest.Infrastructure.csproj|c:\\users\\saorcava\\source\\repos\\hahnsoftwaretest\\hahnsoftwaretest.infrastructure\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{69EA5CE6-460F-42AE-A735-969554911BD3}|HahnSoftwareTest.Infrastructure\\HahnSoftwareTest.Infrastructure.csproj|solutionrelative:hahnsoftwaretest.infrastructure\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC5B5010-2DDB-4B7C-B75F-D6D67917A4CA}|HahnSoftwareTest.Domain\\HahnSoftwareTest.Domain.csproj|c:\\users\\saorcava\\source\\repos\\hahnsoftwaretest\\hahnsoftwaretest.domain\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EC5B5010-2DDB-4B7C-B75F-D6D67917A4CA}|HahnSoftwareTest.Domain\\HahnSoftwareTest.Domain.csproj|solutionrelative:hahnsoftwaretest.domain\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D8FC08C-EC0E-4F18-9237-80FA6C5BD00B}|HahnSoftwareTest.WorkerService\\HahnSoftwareTest.WorkerService.csproj|c:\\users\\saorcava\\source\\repos\\hahnsoftwaretest\\hahnsoftwaretest.workerservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D8FC08C-EC0E-4F18-9237-80FA6C5BD00B}|HahnSoftwareTest.WorkerService\\HahnSoftwareTest.WorkerService.csproj|solutionrelative:hahnsoftwaretest.workerservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D8FC08C-EC0E-4F18-9237-80FA6C5BD00B}|HahnSoftwareTest.WorkerService\\HahnSoftwareTest.WorkerService.csproj|c:\\users\\saorcava\\source\\repos\\hahnsoftwaretest\\hahnsoftwaretest.workerservice\\worker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D8FC08C-EC0E-4F18-9237-80FA6C5BD00B}|HahnSoftwareTest.WorkerService\\HahnSoftwareTest.WorkerService.csproj|solutionrelative:hahnsoftwaretest.workerservice\\worker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\Users\\saorcava\\source\\repos\\HahnSoftwareTest\\HahnSoftwareTest.Infrastructure\\Class1.cs",
+              "RelativeDocumentMoniker": "HahnSoftwareTest.Infrastructure\\Class1.cs",
+              "ToolTip": "C:\\Users\\saorcava\\source\\repos\\HahnSoftwareTest\\HahnSoftwareTest.Infrastructure\\Class1.cs",
+              "RelativeToolTip": "HahnSoftwareTest.Infrastructure\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T18:17:37.468Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\Users\\saorcava\\source\\repos\\HahnSoftwareTest\\HahnSoftwareTest.Application\\Class1.cs",
+              "RelativeDocumentMoniker": "HahnSoftwareTest.Application\\Class1.cs",
+              "ToolTip": "C:\\Users\\saorcava\\source\\repos\\HahnSoftwareTest\\HahnSoftwareTest.Application\\Class1.cs",
+              "RelativeToolTip": "HahnSoftwareTest.Application\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T18:17:00.23Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\Users\\saorcava\\source\\repos\\HahnSoftwareTest\\HahnSoftwareTest.Domain\\Class1.cs",
+              "RelativeDocumentMoniker": "HahnSoftwareTest.Domain\\Class1.cs",
+              "ToolTip": "C:\\Users\\saorcava\\source\\repos\\HahnSoftwareTest\\HahnSoftwareTest.Domain\\Class1.cs",
+              "RelativeToolTip": "HahnSoftwareTest.Domain\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T18:16:32.407Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\saorcava\\source\\repos\\HahnSoftwareTest\\HahnSoftwareTest.WorkerService\\Program.cs",
+              "RelativeDocumentMoniker": "HahnSoftwareTest.WorkerService\\Program.cs",
+              "ToolTip": "C:\\Users\\saorcava\\source\\repos\\HahnSoftwareTest\\HahnSoftwareTest.WorkerService\\Program.cs",
+              "RelativeToolTip": "HahnSoftwareTest.WorkerService\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T18:11:40.211Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Worker.cs",
+              "DocumentMoniker": "C:\\Users\\saorcava\\source\\repos\\HahnSoftwareTest\\HahnSoftwareTest.WorkerService\\Worker.cs",
+              "RelativeDocumentMoniker": "HahnSoftwareTest.WorkerService\\Worker.cs",
+              "ToolTip": "C:\\Users\\saorcava\\source\\repos\\HahnSoftwareTest\\HahnSoftwareTest.WorkerService\\Worker.cs",
+              "RelativeToolTip": "HahnSoftwareTest.WorkerService\\Worker.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T18:11:17.665Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
