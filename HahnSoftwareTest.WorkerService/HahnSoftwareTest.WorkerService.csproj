@@ -10,4 +10,9 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.1" />
   </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HahnSoftwareTest.Application\HahnSoftwareTest.Application.csproj" />
+    <ProjectReference Include="..\HahnSoftwareTest.Domain\HahnSoftwareTest.Domain.csproj" />
+  </ItemGroup>
 </Project>
