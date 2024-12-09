@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using HahnSoftwareTest.Domain.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace HahnSoftwareTest.Infrastructure.Data
 {
@@ -9,11 +10,16 @@ namespace HahnSoftwareTest.Infrastructure.Data
         { }
 
         public DbSet<MyEntity> MyEntities { get; set; }
-    }
 
-    public class MyEntity
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<MyEntity>()
+                .ToTable("MyEntities")
+                .Property(e => e.Name)
+                .IsRequired()
+                .HasMaxLength(100);
+        }
     }
 }
