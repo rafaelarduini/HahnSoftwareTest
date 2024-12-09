@@ -1,0 +1,51 @@
+## ASP.NET
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# User-specific files
+.vs/
+.vscode/
+
+# Build Folders (in case you build from Visual Studio or MSBuild)
+bin/
+obj/
+
+# .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows Installer files
+*.vsix
+
+# Windows Installer files
+*.appx
+*.appxbundle
+
+# Logs
+*.log
+
+# Tye
+.tye/
+
+# JetBrains Rider
+.idea/
+
+# VS for Mac
+.vscode/
+
+# ASP.NET temporary files
+app_data/
