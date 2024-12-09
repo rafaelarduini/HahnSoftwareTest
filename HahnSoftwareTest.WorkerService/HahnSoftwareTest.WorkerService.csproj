@@ -8,11 +8,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Hangfire" Version="1.8.17" />
+    <PackageReference Include="Hangfire.SqlServer" Version="1.8.17" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.1" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\HahnSoftwareTest.Application\HahnSoftwareTest.Application.csproj" />
     <ProjectReference Include="..\HahnSoftwareTest.Domain\HahnSoftwareTest.Domain.csproj" />
+    <ProjectReference Include="..\HahnSoftwareTest.Infrastructure\HahnSoftwareTest.Infrastructure.csproj" />
   </ItemGroup>
 </Project>

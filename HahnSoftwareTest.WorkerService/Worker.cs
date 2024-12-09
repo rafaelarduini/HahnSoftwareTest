@@ -1,23 +1,55 @@
-namespace HahnSoftwareTest.WorkerService;
+using Hangfire;
+using HahnSoftwareTest.Infrastructure.Data;
+using HahnSoftwareTest.Domain.Entities;
 
 public class Worker : BackgroundService
 {
-    private readonly ILogger<Worker> _logger;
+    private readonly ApplicationDbContext _context;
+    private readonly IRecurringJobManager _recurringJobManager;
+    private readonly IConfiguration _configuration;
 
-    public Worker(ILogger<Worker> logger)
+    public Worker(ApplicationDbContext context, IRecurringJobManager recurringJobManager, IConfiguration configuration)
     {
-        _logger = logger;
+        _context = context;
+        _recurringJobManager = recurringJobManager;
+        _configuration = configuration;
     }
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
-        while (!stoppingToken.IsCancellationRequested)
+        string? connectionString = _configuration.GetConnectionString("DefaultConnection");
+
+        if (string.IsNullOrEmpty(connectionString))
         {
-            if (_logger.IsEnabled(LogLevel.Information))
-            {
-                _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
-            }
-            await Task.Delay(1000, stoppingToken);
+            throw new InvalidOperationException("Connection string 'DefaultConnection' not found in configuration.");
         }
+
+        GlobalConfiguration.Configuration
+            .UseSqlServerStorage(connectionString);
+
+        var recurringJobOptions = new RecurringJobOptions
+        {
+            TimeZone = TimeZoneInfo.Local
+        };
+
+        _recurringJobManager.AddOrUpdate(
+            "data-upsert-job", 
+            () => PerformDataUpsert(),
+            "0 * * * *",
+            recurringJobOptions);
+
+        await Task.CompletedTask;
+    }
+
+    public async Task PerformDataUpsert()
+    {
+        var myEntity = new MyEntity
+        {
+            Name = "Sample Data"
+        };
+
+        _context.MyEntities.Add(myEntity);
+
+        await _context.SaveChangesAsync();
     }
 }
