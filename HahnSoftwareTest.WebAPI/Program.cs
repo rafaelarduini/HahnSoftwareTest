@@ -3,6 +3,8 @@ using HahnSoftwareTest.Infrastructure.Repositories;
 using HahnSoftwareTest.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Hangfire;
+using HahnSoftwareTest.Application.Interfaces;
+using HahnSoftwareTest.Application.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +17,8 @@ if (string.IsNullOrEmpty(connectionString))
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString, b => b.MigrationsAssembly("HahnSoftwareTest.WebAPI")));
+
+builder.Services.AddScoped<IMyEntityService, MyEntityService>();
 
 builder.Services.AddScoped<IRepository<MyEntity>, MyEntityRepository>();
 

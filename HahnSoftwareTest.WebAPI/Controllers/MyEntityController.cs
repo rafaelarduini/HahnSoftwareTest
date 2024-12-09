@@ -1,32 +1,31 @@
-using HahnSoftwareTest.Infrastructure.Repositories;
-using HahnSoftwareTest.Domain.Entities;
-using Microsoft.AspNetCore.Mvc;
-using HahnSoftwareTest.Infrastructure.Data;
-
 namespace HahnSoftwareTest.WebAPI.Controllers
 {
+    using HahnSoftwareTest.Application.Interfaces;
+    using HahnSoftwareTest.Application.Dtos;
+    using Microsoft.AspNetCore.Mvc;
+
     [ApiController]
     [Route("api/[controller]")]
     public class MyEntityController : ControllerBase
     {
-        private readonly IRepository<MyEntity> _repository;
+        private readonly IMyEntityService _myEntityService;
 
-        public MyEntityController(IRepository<MyEntity> repository)
+        public MyEntityController(IMyEntityService myEntityService)
         {
-            _repository = repository;
+            _myEntityService = myEntityService;
         }
 
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            var entities = await _repository.GetAllAsync();
+            var entities = await _myEntityService.GetAllAsync();
             return Ok(entities);
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
-            var entity = await _repository.GetByIdAsync(id);
+            var entity = await _myEntityService.GetByIdAsync(id);
             if (entity == null)
                 return NotFound();
 
@@ -34,30 +33,23 @@ namespace HahnSoftwareTest.WebAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] MyEntity entity)
+        public async Task<IActionResult> Create([FromBody] MyEntityDto entity)
         {
-            await _repository.AddAsync(entity);
+            await _myEntityService.AddAsync(entity);
             return CreatedAtAction(nameof(GetById), new { id = entity.Id }, entity);
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, [FromBody] MyEntity entity)
+        public async Task<IActionResult> Update(int id, [FromBody] MyEntityDto entity)
         {
-            if (id != entity.Id)
-                return BadRequest("Entity ID mismatch.");
-
-            await _repository.UpdateAsync(entity);
+            await _myEntityService.UpdateAsync(id, entity);
             return NoContent();
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
-            var entity = await _repository.GetByIdAsync(id);
-            if (entity == null)
-                return NotFound();
-
-            await _repository.DeleteAsync(entity);
+            await _myEntityService.DeleteAsync(id);
             return NoContent();
         }
     }
