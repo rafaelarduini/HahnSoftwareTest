@@ -1,28 +1,33 @@
-﻿using HahnSoftwareTest.Infrastructure.Data;
-using HahnSoftwareTest.Domain.Entities;
-using Microsoft.Extensions.DependencyInjection;
-using Application.Interfaces;
+﻿using HahnSoftwareTest.Application.Interfaces;
+
+namespace HahnSoftwareTest.Application.Services;
 
 public class DataUpsertService : IDataUpsertService
 {
-    private readonly IServiceProvider _serviceProvider;
+    private readonly IExternalApiService _apiService;
+    private readonly IAdviceSlipRepositoryService _repositoryService;
 
-    public DataUpsertService(IServiceProvider serviceProvider)
+    public DataUpsertService(IExternalApiService apiService, IAdviceSlipRepositoryService repositoryService)
     {
-        _serviceProvider = serviceProvider;
+        _apiService = apiService;
+        _repositoryService = repositoryService;
     }
 
-    public async Task PerformDataUpsert()
+    public async Task PerformDataUpsertAsync()
     {
-        using var scope = _serviceProvider.CreateScope();
-        var context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+        var advice = await _apiService.GetRandomAdviceAsync();
+        if (advice == null) throw new Exception("Failed to retrieve advice.");
 
-        var myEntity = new MyEntity
+        var existingAdvice = (await _repositoryService.GetAllAsync())
+            .FirstOrDefault(e => e.Advice == advice.Advice);
+
+        if (existingAdvice == null)
         {
-            Name = "Sample Data"
-        };
-
-        context.MyEntities.Add(myEntity);
-        await context.SaveChangesAsync();
+            await _repositoryService.AddAsync(advice);
+        }
+        else
+        {
+            await _repositoryService.UpdateAsync(existingAdvice.SlipId, advice);
+        }
     }
 }

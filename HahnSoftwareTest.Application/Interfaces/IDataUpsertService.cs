@@ -1,7 +1,6 @@
-﻿namespace Application.Interfaces
+﻿namespace HahnSoftwareTest.Application.Interfaces;
+
+public interface IDataUpsertService
 {
-    public interface IDataUpsertService
-    {
-        Task PerformDataUpsert();
-    }
+    Task PerformDataUpsertAsync();
 }

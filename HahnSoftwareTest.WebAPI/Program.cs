@@ -1,37 +1,22 @@
-using HahnSoftwareTest.Infrastructure.Data;
-using HahnSoftwareTest.Infrastructure.Repositories;
-using HahnSoftwareTest.Domain.Entities;
-using Microsoft.EntityFrameworkCore;
-using Hangfire;
 using HahnSoftwareTest.Application.Interfaces;
 using HahnSoftwareTest.Application.Services;
+using HahnSoftwareTest.Infrastructure.Data;
+using HahnSoftwareTest.Infrastructure.Repositories;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-string? connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-
-if (string.IsNullOrEmpty(connectionString))
-{
-    throw new InvalidOperationException("Connection string 'DefaultConnection' not found in configuration.");
-}
-
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(connectionString, b => b.MigrationsAssembly("HahnSoftwareTest.WebAPI")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-builder.Services.AddScoped<IMyEntityService, MyEntityService>();
-
-builder.Services.AddScoped<IRepository<MyEntity>, MyEntityRepository>();
-
-builder.Services.AddHangfire(x => x.UseSqlServerStorage(connectionString));
-builder.Services.AddHangfireServer();
+builder.Services.AddScoped<IAdviceSlipRepository, AdviceSlipRepository>();
+builder.Services.AddScoped<IAdviceSlipRepositoryService, AdviceSlipRepositoryService>();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
-
-app.UseHangfireDashboard();
 
 if (app.Environment.IsDevelopment())
 {
@@ -41,7 +26,6 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseAuthorization();
-
 app.MapControllers();
 
 app.Run();

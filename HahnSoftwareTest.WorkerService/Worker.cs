@@ -1,4 +1,4 @@
-using Application.Interfaces;
+using HahnSoftwareTest.Application.Interfaces;
 using Hangfire;
 
 public class Worker : BackgroundService
@@ -7,8 +7,8 @@ public class Worker : BackgroundService
     {
         RecurringJob.AddOrUpdate<IDataUpsertService>(
             "data-upsert-job",
-            service => service.PerformDataUpsert(),
-            Cron.Minutely,
+            service => service.PerformDataUpsertAsync(),
+            Cron.Hourly,
             new RecurringJobOptions
             {
                 TimeZone = TimeZoneInfo.Local

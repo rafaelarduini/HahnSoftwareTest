@@ -1,25 +1,24 @@
 ﻿using HahnSoftwareTest.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace HahnSoftwareTest.Infrastructure.Data
+namespace HahnSoftwareTest.Infrastructure.Data;
+
+public class ApplicationDbContext : DbContext
 {
-    public class ApplicationDbContext : DbContext
+    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-            : base(options)
-        { }
+    }
 
-        public DbSet<MyEntity> MyEntities { get; set; }
+    public DbSet<AdviceSlip> AdviceSlips => Set<AdviceSlip>();
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        base.OnModelCreating(modelBuilder);
+
+        modelBuilder.Entity<AdviceSlip>(entity =>
         {
-            base.OnModelCreating(modelBuilder);
-
-            modelBuilder.Entity<MyEntity>()
-                .ToTable("MyEntities")
-                .Property(e => e.Name)
-                .IsRequired()
-                .HasMaxLength(100);
-        }
+            entity.HasKey(e => e.Id);
+            entity.Property(e => e.Advice).IsRequired().HasMaxLength(500);
+        });
     }
 }

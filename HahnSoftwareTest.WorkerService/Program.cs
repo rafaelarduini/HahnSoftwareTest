@@ -1,5 +1,7 @@
-using Application.Interfaces;
+using HahnSoftwareTest.Application.Interfaces;
+using HahnSoftwareTest.Application.Services;
 using HahnSoftwareTest.Infrastructure.Data;
+using HahnSoftwareTest.Infrastructure.Repositories;
 using Hangfire;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
@@ -18,8 +20,14 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
 builder.Services.AddHangfire(config =>
     config.UseSqlServerStorage(connectionString));
+
 builder.Services.AddHangfireServer();
 
+builder.Services.AddHttpClient();
+
+builder.Services.AddScoped<IExternalApiService, ExternalApiService>();
+builder.Services.AddScoped<IAdviceSlipRepository, AdviceSlipRepository>();
+builder.Services.AddScoped<IAdviceSlipRepositoryService, AdviceSlipRepositoryService>();
 builder.Services.AddScoped<IDataUpsertService, DataUpsertService>();
 
 builder.Services.AddHostedService<Worker>();
