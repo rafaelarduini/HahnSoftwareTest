@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Dev\\HahnSoftwareTest\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{2D8FC08C-EC0E-4F18-9237-80FA6C5BD00B}|HahnSoftwareTest.WorkerService\\HahnSoftwareTest.WorkerService.csproj|c:\\dev\\hahnsoftwaretest\\hahnsoftwaretest.workerservice\\worker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D8FC08C-EC0E-4F18-9237-80FA6C5BD00B}|HahnSoftwareTest.WorkerService\\HahnSoftwareTest.WorkerService.csproj|solutionrelative:hahnsoftwaretest.workerservice\\worker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2D8FC08C-EC0E-4F18-9237-80FA6C5BD00B}|HahnSoftwareTest.WorkerService\\HahnSoftwareTest.WorkerService.csproj|c:\\dev\\hahnsoftwaretest\\hahnsoftwaretest.workerservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2D8FC08C-EC0E-4F18-9237-80FA6C5BD00B}|HahnSoftwareTest.WorkerService\\HahnSoftwareTest.WorkerService.csproj|solutionrelative:hahnsoftwaretest.workerservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -17,10 +21,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{ECF24A65-A735-46B8-849F-C37BDDCA65B3}|HahnSoftwareTest.Application\\HahnSoftwareTest.Application.csproj|c:\\dev\\hahnsoftwaretest\\hahnsoftwaretest.application\\services\\advicesliprepositoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ECF24A65-A735-46B8-849F-C37BDDCA65B3}|HahnSoftwareTest.Application\\HahnSoftwareTest.Application.csproj|solutionrelative:hahnsoftwaretest.application\\services\\advicesliprepositoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2D8FC08C-EC0E-4F18-9237-80FA6C5BD00B}|HahnSoftwareTest.WorkerService\\HahnSoftwareTest.WorkerService.csproj|c:\\dev\\hahnsoftwaretest\\hahnsoftwaretest.workerservice\\worker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D8FC08C-EC0E-4F18-9237-80FA6C5BD00B}|HahnSoftwareTest.WorkerService\\HahnSoftwareTest.WorkerService.csproj|solutionrelative:hahnsoftwaretest.workerservice\\worker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,11 +30,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Dev\\HahnSoftwareTest\\HahnSoftwareTest.WebAPI\\Program.cs",
               "RelativeDocumentMoniker": "HahnSoftwareTest.WebAPI\\Program.cs",
@@ -47,7 +47,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "AdviceSlipRepositoryService.cs",
               "DocumentMoniker": "C:\\Dev\\HahnSoftwareTest\\HahnSoftwareTest.Application\\Services\\AdviceSlipRepositoryService.cs",
               "RelativeDocumentMoniker": "HahnSoftwareTest.Application\\Services\\AdviceSlipRepositoryService.cs",
@@ -60,7 +60,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "DataUpsertService.cs",
               "DocumentMoniker": "C:\\Dev\\HahnSoftwareTest\\HahnSoftwareTest.Application\\Services\\DataUpsertService.cs",
               "RelativeDocumentMoniker": "HahnSoftwareTest.Application\\Services\\DataUpsertService.cs",
@@ -73,26 +73,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "Worker.cs",
               "DocumentMoniker": "C:\\Dev\\HahnSoftwareTest\\HahnSoftwareTest.WorkerService\\Worker.cs",
               "RelativeDocumentMoniker": "HahnSoftwareTest.WorkerService\\Worker.cs",
               "ToolTip": "C:\\Dev\\HahnSoftwareTest\\HahnSoftwareTest.WorkerService\\Worker.cs",
               "RelativeToolTip": "HahnSoftwareTest.WorkerService\\Worker.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAzAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-10T13:15:01.606Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Dev\\HahnSoftwareTest\\HahnSoftwareTest.WorkerService\\Program.cs",
               "RelativeDocumentMoniker": "HahnSoftwareTest.WorkerService\\Program.cs",
               "ToolTip": "C:\\Dev\\HahnSoftwareTest\\HahnSoftwareTest.WorkerService\\Program.cs",
               "RelativeToolTip": "HahnSoftwareTest.WorkerService\\Program.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-10T13:12:29.569Z",
               "EditorCaption": ""
