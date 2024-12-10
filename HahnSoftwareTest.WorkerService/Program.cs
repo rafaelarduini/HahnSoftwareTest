@@ -1,28 +1,31 @@
+using Application.Interfaces;
 using HahnSoftwareTest.Infrastructure.Data;
 using Hangfire;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
-using HahnSoftwareTest.Infrastructure.Repositories;
-using HahnSoftwareTest.Domain.Entities;
-using HahnSoftwareTest.Application.Interfaces;
-using HahnSoftwareTest.Application.Services;
 
-var builder = Host.CreateDefaultBuilder(args);
+var builder = WebApplication.CreateBuilder(args);
 
-builder.ConfigureServices((hostContext, services) =>
+string? connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+if (string.IsNullOrEmpty(connectionString))
 {
-    services.AddDbContext<ApplicationDbContext>(options =>
-        options.UseSqlServer(hostContext.Configuration.GetConnectionString("DefaultConnection")));
+    throw new InvalidOperationException("Connection string 'DefaultConnection' not found in configuration.");
+}
 
-    services.AddScoped<IMyEntityService, MyEntityService>();
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlServer(connectionString));
 
-    services.AddScoped<IRepository<MyEntity>, MyEntityRepository>();
+builder.Services.AddHangfire(config =>
+    config.UseSqlServerStorage(connectionString));
+builder.Services.AddHangfireServer();
 
-    services.AddHangfire(x => x.UseSqlServerStorage(hostContext.Configuration.GetConnectionString("DefaultConnection")));
-    services.AddHangfireServer();
+builder.Services.AddScoped<IDataUpsertService, DataUpsertService>();
 
-    services.AddHostedService<Worker>();
-});
+builder.Services.AddHostedService<Worker>();
 
 var app = builder.Build();
 
-await app.RunAsync();
+app.UseHangfireDashboard();
+
+app.Run();
